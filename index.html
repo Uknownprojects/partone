@@ -6,6 +6,7 @@
     <title>My Bebi's 25th Birthday</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body id="balloon-container">
     <div class="container">
         <h1 class="animated-text">Happy 25th Birthday, Mah Bebi! 🎉</h1>
@@ -14,15 +15,33 @@
         <p id="hiddenMessage" class="hidden">🎂 Wishing you love, happiness, and success in the years ahead! 🎂</p>
         
         <div class="gallery">
-            <img src="First_pic.jpg" alt="Birthday Celebration">
-            <img src="Second_pic.jpg" alt="Cake">
-            <img src="Third_pic.jpg" alt="Friends & Family">
+            <div class="image-container">
+                <p class="click-text">Click to reveal</p>
+                <img src="First_pic.jpg" alt="Birthday Celebration" class="hidden-image">
+            </div>
+            <div class="image-container">
+                <p class="click-text">Click to reveal</p>
+                <img src="Second_pic.jpg" alt="Cake" class="hidden-image">
+            </div>
+            <div class="image-container">
+                <p class="click-text">Click to reveal</p>
+                <img src="Third_pic.jpg" alt="Friends & Family" class="hidden-image">
+            </div>
         </div>
+
         <audio controls autoplay loop>
             <source src="birthday-music.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
     </div>
+
+    ,<div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" id="backgroundSwitch">
+            <span class="slider"></span>
+        </label>
+    </div>
+
     <script src="script.js" type="text/javascript"></script>
     <script src="scripttwo.js" type="text/javascript"></script>
 </body>

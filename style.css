@@ -17,6 +17,70 @@ body {
     margin: 0;
 }
 
+/* Dark mode background */
+.dark-mode {
+    background: black !important;
+}
+
+/* Toggle Switch */
+.switch-container {
+    margin-top: 20px; /* Space from audio */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    margin-top: 5px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 25px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #ff4757;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Dark mode text color adjustments */
+.dark-mode h1, 
+.dark-mode .switch-text, 
+.dark-mode .click-text, 
+.dark-mode .hidden {
+    color: white;
+}
+
 .container {
     text-align: center;
     max-width: 600px;
@@ -38,7 +102,7 @@ button {
     display: inline-block;
     padding: 10px 15px;
     font-size: 15px;
-    opacity: 50%;
+    opacity: 80%;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -77,11 +141,41 @@ button:active {
     margin-top: 20px;
 }
 
-.gallery img {
+/* Image container */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Click text */
+.click-text {
+    font-size: 1em;
+    color: white;
+    margin-bottom: 5px;
+    background: rgba(55, 225, 255, 0.5);
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.click-text:hover{
+    background-color: #fad0c4;
+}
+
+/* Hidden images */
+.hidden-image {
     width: 100px;
     height: 100px;
     border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none; /* Prevent clicks before reveal */
+}
+
+.revealed {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .gallery img:hover {
