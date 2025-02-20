@@ -1,11 +1,30 @@
 #This is my first webpage
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 25th Birthday, Liam!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
+    <audio autoplay loop>
+        <source src="birthday-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+    
+    <div class="container">
+        <h1 class="animate-heading">Happy 25th Birthday, Liam! 🎉</h1>
+        <p class="message">Thank you to everyone who has been part of my journey. Your love and support mean the world to me! Let's celebrate together! 🎂🥳</p>
+        
+        <div class="gallery">
+            <img src="photo1.jpg" alt="Birthday Image 1" class="animate-img">
+            <img src="photo2.jpg" alt="Birthday Image 2" class="animate-img">
+            <img src="photo3.jpg" alt="Birthday Image 3" class="animate-img">
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
