@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const audio = document.getElementById("birthdayAudio");
     const playButton = document.getElementById("playMusicButton");
 
-    // Try autoplay when page loads (Muted first)
+    // Play music when page loads (muted first)
     audio.muted = true;
     audio.play().then(() => {
-        audio.muted = false; // Unmute after it starts
+        audio.muted = false; // Unmute after autoplay starts
     }).catch(() => {
         console.log("Autoplay blocked. Waiting for user interaction...");
         playButton.style.display = "block"; // Show play button
@@ -46,4 +46,29 @@ document.addEventListener("DOMContentLoaded", function () {
     backgroundSwitch.addEventListener("change", function () {
         document.body.classList.toggle("dark-mode");
     });
+
+    // 🎈 Balloon Animation (Random Colors)
+    function createBalloon() {
+        const balloon = document.createElement("div");
+        balloon.classList.add("balloon");
+
+        // Set random position
+        balloon.style.left = Math.random() * 100 + "vw";
+        
+        // Set random animation duration
+        balloon.style.animationDuration = Math.random() * 3 + 3 + "s";
+
+        // Random colors for balloons
+        const colors = ["red", "blue", "green", "yellow", "pink", "purple", "orange"];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        balloon.style.backgroundColor = randomColor;
+
+        document.getElementById("balloon-container").appendChild(balloon);
+
+        setTimeout(() => {
+            balloon.remove(); // Remove balloon after animation
+        }, 6000);
+    }
+
+    setInterval(createBalloon, 500); // Generate balloons continuously
 });
