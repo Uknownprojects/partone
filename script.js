@@ -34,7 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    
+    // Background color switch
+    const backgroundSwitch = document.getElementById("backgroundSwitch");
+
+    backgroundSwitch.addEventListener("change", function () {
+        document.body.classList.toggle("dark-mode");
+    });
 });
 
 
