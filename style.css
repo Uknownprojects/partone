@@ -214,3 +214,26 @@ audio {
     from { transform: translateY(0); opacity: 1; }
     to { transform: translateY(-120vh); opacity: 0; }
 }
+
+/* Play button */
+#playMusicButton {
+    display: none; /* Hidden until needed */
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    
+    /* Center the button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; /* Centers horizontally */
+}
+
+#playMusicButton:hover {
+    background-color: #ff4757;
+}

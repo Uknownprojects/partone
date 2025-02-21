@@ -1,15 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Play audio when the page loads
     const audio = document.getElementById("birthdayAudio");
+    const playButton = document.getElementById("playMusicButton");
 
-    // Try playing audio when the page loads
-    audio.play().catch(error => {
-        console.log("Autoplay was blocked. Playing after user interaction.");
-        
-        // Add an event listener to play audio on user interaction
-        document.body.addEventListener("click", function () {
-            audio.play();
-        }, { once: true }); // Runs only once
+    // Try autoplay when page loads (Muted first)
+    audio.muted = true;
+    audio.play().then(() => {
+        audio.muted = false; // Unmute after it starts
+    }).catch(() => {
+        console.log("Autoplay blocked. Waiting for user interaction...");
+        playButton.style.display = "block"; // Show play button
+    });
+
+    // Play audio when user clicks the button
+    playButton.addEventListener("click", function () {
+        audio.muted = false;
+        audio.play();
+        playButton.style.display = "none"; // Hide button after playing
     });
 
     // Reveal message on button click
@@ -41,8 +47,3 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.toggle("dark-mode");
     });
 });
-
-
-
-
-
